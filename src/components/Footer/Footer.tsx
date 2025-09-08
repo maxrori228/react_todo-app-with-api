@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Todo } from '../../types/Todo';
-import { FILTERS } from '../../types/enums';
+import { Filters } from '../../types/enums';
 
 type Props = {
   todos: Todo[];
   items: Todo[];
-  filter: FILTERS;
-  setFilter: React.Dispatch<React.SetStateAction<FILTERS>>;
+  filter: Filters;
+  setFilter: React.Dispatch<React.SetStateAction<Filters>>;
   handleDeleteCompleteTodo: () => void;
 };
 
@@ -28,10 +28,10 @@ const FooterComponent: React.FC<Props> = ({
         <a
           href="#/"
           className={classNames('filter__link', {
-            selected: filter === FILTERS.all,
+            selected: filter === Filters.all,
           })}
           data-cy="FilterLinkAll"
-          onClick={() => setFilter(FILTERS.all)}
+          onClick={() => setFilter(Filters.all)}
         >
           All
         </a>
@@ -39,10 +39,10 @@ const FooterComponent: React.FC<Props> = ({
         <a
           href="#/active"
           className={classNames('filter__link', {
-            selected: filter === FILTERS.active,
+            selected: filter === Filters.active,
           })}
           data-cy="FilterLinkActive"
-          onClick={() => setFilter(FILTERS.active)}
+          onClick={() => setFilter(Filters.active)}
         >
           Active
         </a>
@@ -50,10 +50,10 @@ const FooterComponent: React.FC<Props> = ({
         <a
           href="#/completed"
           className={classNames('filter__link', {
-            selected: filter === FILTERS.completed,
+            selected: filter === Filters.completed,
           })}
           data-cy="FilterLinkCompleted"
-          onClick={() => setFilter(FILTERS.completed)}
+          onClick={() => setFilter(Filters.completed)}
         >
           Completed
         </a>
